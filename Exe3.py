@@ -1,41 +1,41 @@
-# Faça um Programa que leia 2 números e em seguida pergunte ao usuário qual operação ele deseja realizar. O resultado
-# da operação deve ser acompanhado de uma frase que diga se o número é:
-num1 = float(input("Escreva um número: "))
-num2 = float(input("Escreva um número: "))
-resposta = float(input("\nPara saber se é par ou impar digite (1)"
-                       "\nPara saber se é positivo ou negativo digite (2)"
-                       "\nPara saber se é inteiro ou decimal digite (3)"
-                       "\nEscolha uma operaçaõ deseja fazer:"))
-# par ou ímpar;
-if resposta == 1:
-    resto1 = num1 % 2
-    if resto1 == 0:
-        print(f"O número {num1:.0f} é par")
-    else:
-        print(f"O número {num1:.0f} é  impar")
-    resto2 = num2 % 2
-    if resto2 == 0:
-        print(f"O número {num2:.0f} é par")
-    else:
-        print(f"O número {num2:.0f} é  impar")
+# Faça um programa que faça 5 perguntas para uma pessoa sobre um crime. As perguntas são: "Telefonou para a vítima?"
+# "Esteve no local do crime?" "Mora perto da vítima?" "Devia para a vítima?" "Já trabalhou com a vítima?" O programa
+# deve no final emitir uma classificação sobre a participação da pessoa no crime. Se a pessoa responder positivamente
+# a 2 questões ela deve ser classificada como "Suspeita", entre 3 e 4 como "Cúmplice" e 5 como "Assassino". Caso
+# contrário, ele será classificado como "Inocente".
+print("Responda só com (s) ou (n)")
+p1 = input("Telefonou para a vítima?")
+p2 = input("Esteve no local do crime?")
+p3 = input("Mora perto da vítima?")
+p4 = input("Devia para a vítima?")
+p5 = input("Já trabalhou com a vítima?")
 
-# positivo ou negativo;
-elif resposta == 2:
-    if num1 >= 0:
-        print(f'{int(num1)} é um número positivo')
-    else:
-        print(f'{int(num1)} é um número negativo')
-    if num2 >= 0:
-        print(f'{int(num2)} é um número positivo')
-    else:
-        print(f'{int(num2)} é um número negativo')
-# inteiro ou decimal.
-elif resposta == 3:
-    if round(num1):
-        print(f'{int(num1)} é um número inteiro')
-    else:
-        print(f'{num1} é um número decimal')
-    if round(num2):
-        print(f'{int(num2)} é um número inteiro')
-    else:
-        print(f'{num2} é um número decimal')
+if p1 == "s":
+    p1 = 1
+else:
+    p1 = 0
+if p2 == "s":
+    p2 = 1
+else:
+    p2 = 0
+if p3 == "s":
+    p3 = 1
+else:
+    p3 = 0
+if p4 == "s":
+    p4 = 1
+else:
+    p4 = 0
+if p5 == "s":
+    p5 = 1
+else:
+    p5 = 0
+r1 = p1 + p2 + p3 + p4 + p5
+if r1 == 0 or r1 == 1:
+    print("É inocente")
+elif r1 == 2:
+    print("É Suspeito")
+elif r1 == 3 or 4:
+    print("É Cúmplice")
+elif r1 == 5:
+    print("É Assasino")
